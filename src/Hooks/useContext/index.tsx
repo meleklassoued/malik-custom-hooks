@@ -16,7 +16,7 @@ interface IMycontextProviderProps {
 }
 
 const MycontextProvider: React.FC<IMycontextProviderProps> = ({ children }) => {
-  const [appStatus, setAppStatus] = useState("inital Status");
+  const [appStatus, setAppStatus] = useState("ON");
 
   const contextValue: IMyContext = {
     appStatus,
@@ -36,7 +36,7 @@ const MycontextProvider: React.FC<IMycontextProviderProps> = ({ children }) => {
 const useMyContext = (): IMyContext => {
   const context = useContext(Mycontext);
   if (!context) {
-    throw new Error("useMyContext must be used with a MycontextProvuder");
+    throw new Error("useMyContext must be used with a MycontextProvider");
   }
   return context;
 };
